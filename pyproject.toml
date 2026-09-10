@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "flyscroll"
+version = "0.1.0"
+description = "A fruit-fly connectome simulation that doomscrolls short-form video and scrolls when it habituates"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.1",
+  "pyarrow>=15",
+  "pillow>=10.2",
+  "numba>=0.59",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+video = ["imageio>=2.34", "imageio-ffmpeg>=0.4.9"]
+shorts = [
+  "playwright>=1.40",
+  "pyobjc-framework-Cocoa>=10.0; sys_platform == 'darwin'",
+  "pyobjc-framework-Quartz>=10.0; sys_platform == 'darwin'",
+  "pyobjc-framework-ScreenCaptureKit>=10.0; sys_platform == 'darwin'",
+  "pyobjc-framework-CoreMedia>=10.0; sys_platform == 'darwin'",
+]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+flyscroll = "flyscroll.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["flyscroll*"]
+
+[tool.setuptools.package-data]
+flyscroll = ["datasets.json", "ui/*.html", "ui/*.css", "ui/*.js"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning"]

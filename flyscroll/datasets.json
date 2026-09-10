@@ -1,0 +1,30 @@
+{
+  "source_checked": "2026-09-10",
+  "datasets": {
+    "malecns_v1": {
+      "sex": "male",
+      "release": "MaleCNS v1.0",
+      "coverage": "brain_and_ventral_nerve_cord",
+      "source": "https://male-cns.janelia.org/download/",
+      "paper": "https://doi.org/10.1016/j.cell.2026.08.015",
+      "license": "CC-BY-4.0",
+      "node_policy": "Retain every annotation row with a non-empty superclass, excluding rows whose status is Glia. No restriction to Traced status and no restriction to named types.",
+      "edge_policy": "Retain every released edge between retained nodes. No additional weight threshold, no removal of self edges.",
+      "upstream_filters": [
+        "Published pre/post synapse confidence threshold 0.5",
+        "Only annotated neuronal entries become simulation nodes"
+      ],
+      "upstream_autapses_excluded": false,
+      "files": {
+        "annotations.feather": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-annotations-male-cns-v1.0-minconf-0.5.feather",
+        "neurotransmitters.feather": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/body-neurotransmitters-male-cns-v1.0.feather",
+        "edges.feather": "https://storage.googleapis.com/flyem-male-cns/v1.0/connectome-data/flat-connectome/connectome-weights-male-cns-v1.0-minconf-0.5.feather"
+      },
+      "approximate_bytes": {
+        "annotations.feather": 14483314,
+        "neurotransmitters.feather": 43282834,
+        "edges.feather": 1051241946
+      }
+    }
+  }
+}

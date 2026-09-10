@@ -1,0 +1,8 @@
+FlyScroll uses the MaleCNS v1.0 connectome dataset.
+
+MaleCNS data is licensed under CC BY 4.0 and is attributed to the Janelia
+Research Campus and collaborating authors. The source data is not distributed
+with this repository; dataset URLs and expected hashes are recorded in
+flyscroll/datasets.json and connectome_data/malecns_v1/source.lock.json.
+
+License: https://creativecommons.org/licenses/by/4.0/

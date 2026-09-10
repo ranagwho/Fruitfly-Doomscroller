@@ -1,0 +1,24 @@
+# FlyScroll
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.ref/
+outputs/
+connectome_data/**/normalized/
+connectome_data/**/*.download
+connectome_data/**/*.feather
+connectome_data/**/*.arrow
+connectome_data/**/*.npy
+*.npz
+*.mp4
+reels/*
+!reels/.gitkeep
+*.egg-info/
+build/
+dist/
+.env
+.dev.vars
