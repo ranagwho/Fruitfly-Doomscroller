@@ -9,11 +9,10 @@ Based on the recent fruit fly connectome published by [Google](https://blog.goog
 
 ## How it works
 
-1. Frames are sampled into graded ommatidial columns with adaptation and local normalization.
-2. ON/OFF, motion, looming, edge, flicker, chromatic, and small-object channels describe changes in the retinal signal.
-3. Adapted input is injected only into mapped R1–R8 photoreceptors.
-4. Population prediction error supplies content-sensitive novelty; interest is its slower tonic component.
-5. The feed advances after sustained low novelty or after 98% of the current video's duration.
+1. Frames are coarsely sampled into ommatidial columns and normalized.
+2. Video is fed into the mapped R1–R8 receptors.
+3. Compute novelty as prediction error across the analog channels. Compute Interest as is its slower tonic component.
+5. Sustained Kenyon activity depresses existing KC→novelty-MBON synapses, with slow homeostasis. The feed advances after a sustained content-sensitive novelty drop or max-watch timeout.
 
 ## Setup
 
