@@ -1,9 +1,6 @@
 # FlyScroll
 
-A fruit-fly-inspired **doomscroller** built around the MaleCNS connectome.
-Video passes through an analog compound-eye model and mapped photoreceptors;
-population prediction error estimates novelty and advances the feed after
-sustained boredom or media completion.
+A fruit-fly-inspired **doomscroller** built on the MaleCNS controller. The frut-fly watches short-form brainrot reels through modeled photoreceptors, stays on a clip until novelty-compartment MBON activity stays high, and scrolls when that interest habituates.
 
 Based on the recent fruit fly connectome published by [Google](https://blog.google/innovation-and-ai/technology/research/male-fruit-fly-brain-map/).
 
@@ -33,16 +30,7 @@ flyscroll prepare --scale visual          # labelled crop for 16GB laptops (~70k
 flyscroll prepare --scale full            # intact retained CNS (~166k neurons; needs more RAM)
 ```
 
-The visual crop omits many `ol_intrinsic` cells. FlyScroll does **not** inject a
-scalar frame-difference current into Kenyon cells or directly stimulate
-T4/T5/LC feature detectors. Adapted graded input is applied only to mapped
-photoreceptors; analog feature channels and synaptic readout populations
-jointly inform the decoder. Prefer `--scale full` when you have the memory.
-
-The present behavioral decision is primarily an engineered population-novelty
-decoder. Kenyon, novelty-MBON, and MDN activity can remain at zero, so this is
-not evidence that the reconstructed mushroom-body pathway itself learned to
-doomscroll.
+The visual crop omits many `ol_intrinsic` cells. FlyScroll does **not** inject a scalar frame-difference current into Kenyon cells or directly stimulate T4/T5/LC feature detectors. Prefer `--scale full` when you have the memory.
 
 ## Run
 
@@ -57,11 +45,7 @@ Drop your own MP4/WebM files in `reels/` and pass `--reels reels`, or use the bu
 
 ### Live YouTube Shorts (no login required)
 
-Opt-in: Playwright opens public Shorts in headed Chromium. **ScreenCaptureKit**
-streams the selected window into the fly; Chromium compositor screenshots are
-used as a fallback when macOS returns blank window frames. Navigation tries a
-wheel gesture, the Shorts next button, and keyboard input, then verifies that
-the YouTube video ID changed.
+Playwright opens public Shorts in headed Chromium. **ScreenCaptureKit** streams the selected window into the fly; Chromium compositor screenshots are used as a fallback when macOS returns blank window frames.
 
 ```sh
 pip install -e ".[shorts]"
@@ -72,14 +56,6 @@ PLAYWRIGHT_BROWSERS_PATH=0 playwright install chromium
 # Then fully quit/reopen that app.
 flyscroll serve --scale visual --shorts
 ```
-
-A headed Chromium window is the Shorts viewport. In Shorts mode the spectator
-shows the ommatidial samples, analog feature channels, connectome activity,
-full-session novelty/interest history, and per-reel watch statistics. Video is
-unmuted when playback starts. Consent controls are handled when detected; if a
-regional dialog remains, accept it once in Chromium. Watch percentages use the
-video's media duration rather than a request timeout. The ScreenCaptureKit path
-is macOS-only.
 
 Headless smoke:
 
