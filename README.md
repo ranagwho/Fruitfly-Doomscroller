@@ -2,7 +2,7 @@
 
 A fruit-fly-inspired **doomscroller** built on the MaleCNS controller. The frut-fly watches short-form brainrot reels through modeled photoreceptors, stays on a clip until novelty-compartment MBON activity stays high, and scrolls when that interest habituates.
 
-![FlyScroll watching YouTube Shorts](docs/flyscroll-demo.jpg)
+![FlyScroll watching YouTube Shorts](docs/flyscroll-demo.gif)
 
 Based on the recent fruit fly connectome published by [Google](https://blog.google/innovation-and-ai/technology/research/male-fruit-fly-brain-map/).
 
