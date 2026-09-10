@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FlyScroll</title>
+  <link rel="stylesheet" href="/app.css" />
+</head>
+<body>
+  <div class="stage">
+    <main class="layout" id="layout">
+      <section class="phone" id="phone" aria-label="Reel viewport">
+        <img id="frame" alt="Current reel frame" />
+        <div class="phone-meta">
+          <div id="reel-title">booting…</div>
+          <div id="reel-sub"></div>
+        </div>
+        <div id="scroll-flash" hidden>SCROLL</div>
+      </section>
+
+      <section class="brain" aria-label="CNS activation cloud">
+        <canvas id="cloud"></canvas>
+        <div class="brain-meta">
+          <span id="cloud-label">loading anatomy…</span>
+          <span class="hint">drag to orbit · scroll to zoom</span>
+        </div>
+      </section>
+
+      <aside class="telemetry" id="telemetry">
+        <h2>Interest</h2>
+        <div class="meter"><div id="interest-bar"></div></div>
+        <div class="scroll-error" id="scroll-error" hidden></div>
+
+        <section class="fly-eye-panel" id="fly-eye-panel">
+          <div class="chart-head">
+            <span>Ommatidial Column</span>
+          </div>
+          <canvas id="fly-eye" width="560" height="250"></canvas>
+          <div class="eye-features" id="eye-features"></div>
+        </section>
+
+        <div class="charts" id="charts" hidden>
+          <div class="chart-block">
+            <div class="chart-head">
+              <span>Interest + novelty · entire session</span>
+              <span class="chart-legend"><i class="swatch interest"></i>interest <i class="swatch novelty"></i>novelty <i class="swatch skip"></i>skip</span>
+            </div>
+            <canvas id="chart-interest" width="560" height="180"></canvas>
+          </div>
+          <div class="chart-block">
+            <div class="chart-head">
+              <span>Avg watch length</span>
+              <strong id="avg-watch">—</strong>
+            </div>
+            <canvas id="chart-avg" width="560" height="96"></canvas>
+          </div>
+        </div>
+
+        <dl class="stats">
+          <div><dt>Interest</dt><dd id="interest">—</dd></div>
+          <div><dt>Population novelty</dt><dd id="phasic">—</dd></div>
+          <div><dt>Low-novelty dwell</dt><dd id="dwell">—</dd></div>
+          <div><dt>Active cells</dt><dd id="active">—</dd></div>
+          <div id="watch-dist-stat" hidden><dt>Watch p50</dt><dd id="watch-dist-v">—</dd></div>
+        </dl>
+
+      </aside>
+
+      <aside class="left-analytics" id="left-analytics" hidden>
+        <section class="reel-log" id="reel-log">
+          <h2>Watched reels</h2>
+          <div id="reel-cards" class="reel-cards"></div>
+        </section>
+        <section class="chart-block outcome-chart">
+          <div class="chart-head">
+            <span>Watch outcomes</span>
+            <strong id="outcome-total">0 reels</strong>
+          </div>
+          <div class="outcome-row">
+            <span>Bored</span>
+            <div class="outcome-track"><i id="outcome-bored-bar"></i></div>
+            <strong id="outcome-bored">0</strong>
+          </div>
+          <div class="outcome-row">
+            <span>Full watch</span>
+            <div class="outcome-track"><i id="outcome-full-bar"></i></div>
+            <strong id="outcome-full">0</strong>
+          </div>
+        </section>
+      </aside>
+    </main>
+  </div>
+  <script src="/cloud.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
